@@ -8,7 +8,7 @@ Hand::~Hand(){
     clear();
 }
 
-Card* Hand::getCard(int index){
+Card* Hand::getCard(int index) const{
     if(getTotal() != 0){
         return mCards[index];
     }else{

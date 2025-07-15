@@ -33,5 +33,10 @@ ostream& operator<<(ostream& os, const Participant& aParticipant){
         for(int i = 0; i <  aParticipant.mHand.getSize(); i++){
             os << *(aParticipant.mHand.getCard(i));
         }
+        cout << "(" << aParticipant.getTotal() << ")";
+    }else{
+        os << "<Empty>";
     }
+
+    return os;
 }

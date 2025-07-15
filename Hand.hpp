@@ -11,7 +11,7 @@ class Hand{
         Hand();
         virtual ~Hand();
 
-        Card* getCard(int index);
+        Card* getCard(int index) const;
         void addCard(Card* pCard);
         void clear();
         int getTotal() const;

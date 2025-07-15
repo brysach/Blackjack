@@ -14,24 +14,27 @@ Blackjack_Game::Blackjack_Game(const vector<string>& names){
 
 Blackjack_Game::~Blackjack_Game(){}
 
+void Blackjack_Game::displayPlayerHand(){
+    for(int i = 0; i < mPlayers.size(); i++){
+        cout << mPlayers[i] << endl;
+    }    
+}
 void Blackjack_Game::play(){
     for(int i = 0; i < 2; i++){
         for(int j = 0; j < mPlayers.size(); j++){
-            mDeck.deal(mPlayers[i]);
+            mDeck.deal(mPlayers[j]);
         }
         mDeck.deal(mDealer);
     }
 
     mDealer.flipFirstCard();
 
-    for(int i = 0; i < mPlayers.size(); i++){
-        cout << mPlayers[i] << endl;
-    }
-
+    displayPlayerHand();
     cout << mDealer << endl;
 
     for(int i = 0; i < mPlayers.size(); i++){
         mDeck.additionalCard(mPlayers[i]);
+        cout << mPlayers[i] << endl;
     }
 
     mDealer.flipFirstCard();

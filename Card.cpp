@@ -24,13 +24,13 @@ void Card::flip(){
 }
 
 ostream& operator<<(ostream& os, const Card& aCard){
-    const string RANKS[] = {"", "A", "1", "2", "3", "4", "5", "6", "7", "8", "9", "10", "J", "Q", "K"};
+    const string RANKS[] = {"", "A", "2", "3", "4", "5", "6", "7", "8", "9", "10", "J", "Q", "K"};
     const string SUITS[] = {"c", "d", "h", "s"};
 
     if(aCard.mIsFaceUp){
-        os << RANKS[aCard.mRank] << SUITS[aCard.mSuit];
+        os << RANKS[aCard.mRank] << SUITS[aCard.mSuit] << "\t";
     } else{
-        cout << "XX";
+        cout << "XX\t";
     }
 
     return  os;

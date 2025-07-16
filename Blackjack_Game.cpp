@@ -33,8 +33,8 @@ void Blackjack_Game::play(){
     cout << mDealer << endl;
 
     for(int i = 0; i < mPlayers.size(); i++){
-        mDeck.additionalCard(mPlayers[i]);
-        cout << mPlayers[i] << endl;
+        mDeck.additionalCard(mPlayers[i]);      
+        //cout << mPlayers[i] << endl;
     }
 
     mDealer.flipFirstCard();
@@ -42,6 +42,7 @@ void Blackjack_Game::play(){
     cout << mDealer << endl;
 
     mDeck.additionalCard(mDealer);
+    //cout << mDealer << endl;
 
     if(mDealer.isBusted()){
         for(int i = 0; i < mPlayers.size(); i++){

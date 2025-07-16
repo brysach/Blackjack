@@ -7,7 +7,7 @@ Dealer::Dealer(const string& name){
 Dealer::~Dealer(){}
 
 bool Dealer::isHitting() const{
-    return (mHand.getTotal() > 16);
+    return (mHand.getTotal() <= 16);
 }
 
 void Dealer::flipFirstCard(){

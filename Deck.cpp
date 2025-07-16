@@ -35,6 +35,7 @@ void Deck::deal(Participant& aParticipant){
 void Deck::additionalCard(Participant& aParticipant){
     while(!(aParticipant.isBusted()) && aParticipant.isHitting()){
        deal(aParticipant); 
+       cout << aParticipant << endl;
 
         if(aParticipant.isBusted()){
             aParticipant.bust();

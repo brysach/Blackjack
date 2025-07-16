@@ -7,13 +7,14 @@
 #include "Blackjack_Game.hpp"
 
 int main(){
-    cout << "Welcome to Blackjack!" << endl;
+    cout << "\nWelcome to Blackjack!" << endl;
 
     int numPlayers = 0;
     while(numPlayers < 1  || numPlayers > 7){
-        cout << "Enter number of players (1-7): ";
+        cout << "\nEnter number of players (1-7): ";
         cin >> numPlayers;
     }
+    cout << endl;
 
     vector<string> names;
     for(int i = 0; i < numPlayers; i++){
@@ -29,7 +30,7 @@ int main(){
 
     while(playAgain != 'n'){
         aGame.play();
-        cout << "Do you want to play again? (Y/N): ";
+        cout << "\nDo you want to play again? (Y/N): ";
         cin >> playAgain;
     }
 

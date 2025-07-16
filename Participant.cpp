@@ -11,7 +11,7 @@ bool Participant::isBusted() const{
 }
 
 void Participant::bust() const{
-    cout << mName << " busts" << endl;
+    cout << "\t" << mName << " busts!" << endl;
 }
 
 void Participant::addCard(Card* aCard){

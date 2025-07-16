@@ -29,7 +29,16 @@ void Blackjack_Game::play(){
 
     mDealer.flipFirstCard();
 
-    displayPlayerHand();
+    //Print initial hands
+    string iniHands = "INITIAL HANDS";
+    cout << endl << "\t" << iniHands << endl << "\t";
+    for(int i = 0; i < iniHands.size(); i++){
+        cout << "-";
+    }
+    cout << endl;
+    for(int i = 0; i < mPlayers.size(); i++){
+        cout << mPlayers[i] << endl;
+    }
     cout << mDealer << endl;
 
     for(int i = 0; i < mPlayers.size(); i++){

@@ -11,6 +11,7 @@ class Deck : public Hand{
 
         void populate();
 
+        void print(); //Only for debugging
         void shuffle();
         void deal(Participant& aParticipant);
         void additionalCard(Participant& aParticipant);

@@ -1,12 +1,26 @@
 #include "Deck.hpp"
 #include <algorithm>
+#include <ctime>
 
 Deck::Deck(){
-    mCards.reserve(52);
+    mCards.reserve(52);    
+    srand(static_cast<unsigned int>(time(0)));
     populate();
+    shuffle();  
 }
 
 Deck::~Deck(){}
+
+void Deck::print(){
+    cout << "\n{";
+    for(int i = 0; i < mCards.size(); i++){
+        cout << *mCards[i];
+        if(i != 0 && ((i + 1) % 13 == 0) && i != mCards.size() - 1){
+            cout << endl;
+        }
+    }
+    cout << "}\n" << endl;
+}
 
 void Deck::populate(){
     clear();
@@ -16,18 +30,25 @@ void Deck::populate(){
             addCard(new Card(static_cast<Card::rank>(r), static_cast<Card::suit>(s)));
         }
     }
+
+    //print();  //Print deck to debug
 }
 
 void Deck::shuffle(){
     random_shuffle(mCards.begin(), mCards.end());
+    cout << "\tSHUFFLING\n";
 }
 
 void Deck::deal(Participant& aParticipant){
     if(!mCards.empty()){
         aParticipant.addCard(mCards.back());
         mCards.pop_back();
+        //print();  //Print deck to debug
     } else{
-        cout << "Deck is empty!" << endl;
+        cout << "\n\tDeck is empty!" << endl;
+        cout << "\tShuffling new deck..." << endl;
+        populate();
+        shuffle();
     }
 
 }

@@ -1,14 +1,9 @@
 #include "Blackjack_Game.hpp"
 
-#include <ctime>
-
 Blackjack_Game::Blackjack_Game(const vector<string>& names){
     for(int i = 0; i < names.size(); i++){
         mPlayers.push_back(Player(names[i]));
-
-        srand(static_cast<unsigned int>(time(0)));
-        mDeck.populate();
-        mDeck.shuffle();        
+        //Deck's default constructor is executed here
     }
 }
 

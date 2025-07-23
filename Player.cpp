@@ -8,21 +8,25 @@ Player::~Player(){
 }
 
 bool Player::isHitting() const{
-    char response;
-    cout << endl << mName << " , do you want to hit (Y/N): ";
-    cin >> response;
-    return (response == 'y');
+    if(mHand.getTotal() < 21){
+        char response;
+        cout << endl << mName << ", do you want to hit (Y/N): ";
+        cin >> response;
+        return (response == 'y');
+    } else{
+        return false;
+    }
 }
 
 void Player::win() const{
-    cout << "\t" << mName << " wins!" << endl;
+    cout << "\n\t" << mName << " wins!" << endl;
 }
 
 void Player::lose() const{
-    cout << "\t" << mName << " loses!" << endl;
+    cout << "\n\t" << mName << " loses!" << endl;
 }
 
 void Player::push() const{
-    cout << "\t" << mName << " pushes!" << endl;
+    cout << "\n\t" << mName << " pushes!" << endl;
 }
 

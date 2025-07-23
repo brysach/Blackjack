@@ -46,10 +46,13 @@ void Blackjack_Game::play(){
         //cout << mPlayers[i] << endl;
     }
 
+    cout << "\n\t*Dealer reveals card*" << endl;
     mDealer.flipFirstCard();
-
     cout << mDealer << endl;
 
+    if(!(mDealer.isBusted()) && mDealer.isHitting()){
+        cout << "\n\tDealer hits!" << endl;
+    }
     mDeck.additionalCard(mDealer);
     //cout << mDealer << endl;
 

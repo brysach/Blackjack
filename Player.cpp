@@ -18,15 +18,34 @@ bool Player::isHitting() const{
     }
 }
 
-void Player::win() const{
+void Player::win(){
     cout << "\n\t" << mName << " wins!" << endl;
+    wins++;
 }
 
-void Player::lose() const{
+void Player::lose(){
     cout << "\n\t" << mName << " loses!" << endl;
+    losses++;
 }
 
-void Player::push() const{
+void Player::push(){
     cout << "\n\t" << mName << " pushes!" << endl;
+    pushes++;
+}
+
+int Player::getWins() const{
+    return wins;
+}
+
+int Player::getLosses() const{
+    return losses;
+}
+
+int Player::getPushes() const{
+    return pushes;
+}
+
+string Player::getName() const{
+    return mName;
 }
 

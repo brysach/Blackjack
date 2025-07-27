@@ -4,6 +4,7 @@
 #include "Player.hpp"
 #include "Dealer.hpp"
 #include "Deck.hpp"
+#include "Record.hpp"
 #include "Blackjack_Game.hpp"
 
 int main(){
@@ -16,6 +17,7 @@ int main(){
     }
     cout << endl;
 
+    Record scores(numPlayers);
     vector<string> names;
     for(int i = 0; i < numPlayers; i++){
         string name;
@@ -33,6 +35,12 @@ int main(){
         cout << "\nDo you want to play again? (Y/N): ";
         cin >> playAgain;
     }
+
+    cout << "\t\tAfter ending the game" << endl;
+    scores.recordsToFile(aGame.getPlayers());
+    cout << "\t\tAfter recordsToFile()" << endl;
+    scores.recordsFromFile();
+    scores.retrieveRecord();
 
     return 0;
 }

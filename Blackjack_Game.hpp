@@ -5,6 +5,7 @@
 #include "Player.hpp"
 #include "Dealer.hpp"
 #include "Deck.hpp"
+#include "Record.hpp"
 
 class Blackjack_Game{
     private:
@@ -17,6 +18,7 @@ class Blackjack_Game{
         virtual ~Blackjack_Game();
 
         void displayPlayerHand();
+        vector<Player> getPlayers() const;
         void play();
 };
 #endif

@@ -1,20 +1,20 @@
 #ifndef RECORD_HPP
 #define RECORD_HPP
 
-#include "Player.hpp";
+#include "Player.hpp"
 
 class Record{
     private:
         int numPlayers;
-        Player* player;
+        Player* mPlayers;
 
     public:
-        Record();
+        Record(int size);
         virtual ~Record();
 
-        void recordsToFile();
+        void recordsToFile(vector<Player> players);
         void recordsFromFile();
-        void retrieveRecord(Player& playerRecord);
+        void retrieveRecord();
 
 };
 #endif

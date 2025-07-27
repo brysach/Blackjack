@@ -2,6 +2,9 @@
 
 Player::Player(const string& name){
     mName = name;
+    wins = 0;
+    losses = 0;
+    pushes = 0;
 }
 
 Player::~Player(){
@@ -16,6 +19,22 @@ bool Player::isHitting() const{
     } else{
         return false;
     }
+}
+
+void Player::setName(string name){
+    mName = name;
+}
+
+void Player::setWins(int wins){
+    this->wins = wins;
+}
+
+void Player::setLosses(int losses){
+    this->losses = losses;
+}
+
+void Player::setPushes(int pushes){
+    this->pushes = pushes;
 }
 
 void Player::win(){

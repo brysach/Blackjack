@@ -5,9 +5,9 @@
 
 class Player : public Participant{
     private:
-        int wins = 0;
-        int losses = 0;
-        int pushes = 0;
+        int wins;
+        int losses;
+        int pushes;
     public:
         Player(const string& name = "");
         virtual ~Player();
@@ -18,8 +18,14 @@ class Player : public Participant{
         void lose();
         void push();
 
+        void setName(string name);
+        void setWins(int wins);
+        void setLosses(int losses);
+        void setPushes(int pushes);
+
         int getWins() const;
         int getLosses() const;
         int getPushes() const;
+        string getName() const;
 };
 #endif

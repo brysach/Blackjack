@@ -49,7 +49,7 @@ clean:
 .PHONY: clean
 
 #
-$(BIN):	Card.o Hand.o Participant.o Player.o Dealer.o Deck.o Blackjack_Game.o main.o
+$(BIN):	Card.o Hand.o Participant.o Player.o Dealer.o Deck.o Record.o Blackjack_Game.o main.o
 	$(CPP) *.o -o $(BIN)
 
 #
@@ -74,6 +74,10 @@ Dealer.o:	Dealer.cpp
 
 #
 Deck.o:	Deck.cpp 
+	$(CPP) $(CPP_FLAGS) "$<" -o "$@"
+
+#
+Record.o:	Record.cpp 
 	$(CPP) $(CPP_FLAGS) "$<" -o "$@"
 
 #

@@ -14,6 +14,11 @@ void Blackjack_Game::displayPlayerHand(){
         cout << mPlayers[i] << endl;
     }    
 }
+
+vector<Player> Blackjack_Game::getPlayers() const{
+    return mPlayers;
+}
+
 void Blackjack_Game::play(){
     for(int i = 0; i < 2; i++){
         for(int j = 0; j < mPlayers.size(); j++){
